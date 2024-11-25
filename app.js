@@ -38,9 +38,11 @@ const getTasksFromLocalStorage = () => {
         tasks = JSON.parse(savedTasks);
     };
 
-    if (completedTasks) {
+    if (savedCompletedTasks) {
         completedTasks = JSON.parse(savedCompletedTasks);
     }
+
+    renderTasks();
 }
 
 const addTask = () => {
@@ -53,10 +55,9 @@ const addTask = () => {
 };
 
 const isCompleted = (index) => {
-    currentTaskIndex = index;
-    let completedTask = tasks[currentTaskIndex];
+    let completedTask = {...tasks[index]}
     completedTasks.push(completedTask);
-    tasks.splice(currentTaskIndex, 1);
+    tasks.splice(index, 1);
     renderTasks();
     saveToLocalStorage();
 };
@@ -118,7 +119,7 @@ const renderTasks = () => {
             </div>
         `
     }).join('');
-    
+
 
     completedTasksContainer.innerHTML = completedTasks.map((item, index) => {
         return `
