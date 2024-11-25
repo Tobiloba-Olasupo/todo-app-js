@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>To do App</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>
+                To-do App
+            </h1>
+        </div>
+
+            <div class="form-container">
+                <form id="form">
+                    <input type="text" placeholder="Enter a new task" id="input">
+                    <button type="submit">Submit</button>
+                </form>
+                <pn id="failure-msg"></p>
+            </div>
+
+            <div class="tasks-container" id="tasks-container">
+                <div class="uncompleted">
+                    <div>
+                        <h2 class="uncomp-heading">Tasks</h2>
+                    </div>
+                    <div class="uncompleted-tasks" id="uncompleted-tasks">
+                    </div>
+                </div>
+                
+                <div class="completed">
+                    <div>
+                        <h2 id="comp-heading">completed</h2>
+                    </div>
+
+                    <div class="completed-tasks" id="completed-tasks">
+                    </div>
+                </div>
+            </div>
+</body>
+<script src="app.js"></script>
+</html>
